@@ -101,15 +101,7 @@
     padding: 18px 20px;
   }
 
-  .presentacion__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .presentacion__header h2 {
+  .presentacion h2 {
     margin: 0;
     font-family: var(--font-heading);
     font-size: 18px;
@@ -121,77 +113,6 @@
     line-height: 1.6;
     color: var(--color-text);
     white-space: pre-line;
-  }
-
-  .presentacion__form {
-    margin-top: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .presentacion__form textarea {
-    width: 100%;
-    box-sizing: border-box;
-    min-height: 110px;
-    padding: 12px;
-    border: 1px solid #d9d9d9;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 15px;
-    line-height: 1.6;
-    resize: vertical;
-    outline: none;
-  }
-
-  .presentacion__form textarea:focus {
-    border-color: var(--color-primary);
-  }
-
-  .presentacion__acciones {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-
-  .btn {
-    border: 1px solid var(--color-primary);
-    border-radius: 8px;
-    padding: 8px 18px;
-    font-family: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .btn--primario {
-    background: var(--color-primary);
-    color: var(--color-text-inverse);
-  }
-
-  .btn--secundario {
-    background: var(--color-surface);
-    color: var(--color-primary);
-  }
-
-  /* Botón editar dentro de <details> */
-  .presentacion__edit summary {
-    cursor: pointer;
-    list-style: none;
-    font-size: 14px;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: 8px;
-    padding: 8px 18px;
-    user-select: none;
-  }
-
-  .presentacion__edit summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .presentacion__edit[open] summary {
-    background: var(--color-bg);
   }
 
   @media (max-width: 600px) {
@@ -283,23 +204,9 @@
 
   <section class="presentacion">
 
-    <div class="presentacion__header">
-      <h2>Presentación</h2>
-      <details class="presentacion__edit">
-        <summary>Editar</summary>
-        <form class="presentacion__form">
-          <textarea name="bio" placeholder="Cuéntale a la comunidad quién eres…">
-Hola, soy Danny, fundador de DJC.
-Bienvenido a mi rincón del ecosistema.</textarea>
-          <div class="presentacion__acciones">
-            <button type="button" class="btn btn--secundario">Cancelar</button>
-            <button type="submit" class="btn btn--primario">Guardar</button>
-          </div>
-        </form>
-      </details>
-    </div>
+    <h2>Presentación</h2>
 
-    <p class="presentacion__texto">Hola, soy Danny, fundador de DJC. Bienvenido a mi rincón del ecosistema.</p>
+    <p class="presentacion__texto">Bienvenido, acompáñame en este viaje de descubrimiento! ⛰️🚗🗺️</p>
 
   </section>
 
