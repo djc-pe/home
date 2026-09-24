@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: #f9fafb;
+  background: var(--color-bg);
+  color: var(--color-text);
   padding-top: 60px;
   padding-bottom: 70px;
 }

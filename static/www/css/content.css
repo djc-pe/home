@@ -3,7 +3,8 @@ main.content {
     max-width: 900px;       /* Limita el ancho en pantallas grandes */
     margin: 0 auto;         /* Centra horizontalmente */
     padding: 20px;          /* Espacio interno */
-    background-color: #fff; /* Fondo blanco para resaltar contenido */
+    background-color: var(--color-surface); /* Fondo de superficie para resaltar contenido */
+    color: var(--color-text);
     border-radius: 10px;    /* Bordes redondeados */
     /* box-shadow: 0 2px 10px rgba(0,0,0,0.1); Sombra ligera */
 }
