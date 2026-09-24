@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@danny · DJC</title>
+
+  <link rel="canonical" href="https://www.djc.pe/@danny/">
+  <link rel="icon" type="image/png" href="/static/www/img/icon.png">
+  <link rel="stylesheet" href="/static/www/css/style.css">
+  <link rel="stylesheet" href="/static/www/css/bottom-nav.css">
+  <link rel="stylesheet" href="/static/www/css/content.css">
+
+  <style>
+  :root {
+    /* Tipografía */
+    --font-base: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
+    /* Superficies */
+    --color-bg: #F5F7F2;
+    --color-surface: #FFFFFF;
+
+    /* Texto */
+    --color-text: #1A1A1A;
+    --color-text-muted: #5A5A5A;
+    --color-text-inverse: #FFFFFF;
+
+    /* Marca */
+    --color-primary: #000000;
+    --color-accent: #e5f774;
+
+    /* Variantes */
+    --color-accent-hover: #e5f774;
+    --color-accent-dark: #e5f774;
+
+    /* UI */
+    --color-border: #e5f774;
+  }
+
+  /* ============ PERFIL ============ */
+  .profile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .profile__head {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0 20px 16px;
+  }
+
+  .profile__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid var(--color-surface);
+    background: var(--color-accent);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    flex-shrink: 0;
+  }
+
+  .profile__info {
+    padding-bottom: 8px;
+    min-width: 0;
+  }
+
+  .profile__info h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--color-text);
+  }
+
+  .profile__username {
+    margin: 2px 0 4px;
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+
+  .profile__meta {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+  }
+
+  /* ============ PRESENTACIÓN ============ */
+  .presentacion {
+    margin: 24px 0 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-surface);
+    padding: 18px 20px;
+  }
+
+  .presentacion h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--color-text);
+  }
+
+  .presentacion__texto {
+    margin: 14px 0 0;
+    line-height: 1.6;
+    color: var(--color-text);
+    white-space: pre-line;
+  }
+
+  @media (max-width: 600px) {
+    .profile { padding-top: 12px; }
+    .profile__avatar { width: 72px; height: 72px; font-size: 28px; border-width: 3px; }
+    .profile__head { gap: 12px; padding: 0 14px 14px; }
+    .profile__info h1 { font-size: 20px; }
+    .presentacion { margin: 18px 0 8px; }
+  }
+  </style>
+
+</head>
+<body>
+  <header>
+    
+<link rel="stylesheet" href="/static/www/components/top_nav_v2/style.css">
+<script src="/static/www/components/top_nav_v2/script.js"></script>
+<script src="/static/www/components/top_nav_v2/search.js" defer></script>
+<nav class="navbar">
+  <div class="navbar__a">
+    <a href="#" class="navbar__link">
+      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
+      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
+    </a>
+
+    <a href="https://www.djc.pe/" class="navbar__link">
+      <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
+      <img src="/static/www/img/logo-mobile.png" alt="Home" class="navbar__icon navbar__icon--mobile">
+    </a>
+  </div>
+  <div class="navbar__b">
+    <div class="navbar__b--search">
+      <input type="text" placeholder="">
+      <button>
+          <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
+      </button>
+    </div>
+  </div>
+  <div class="navbar__c">
+    <a href="#" class="navbar__link">
+      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
+      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
+    </a>
+  </div>
+</nav>
+    
+<link rel="stylesheet" href="/static/www/components/top_nav_v2_menu/style.css">
+<script src="/static/www/components/top_nav_v2_menu/script.js"></script>
+<div class="drawer-overlay" id="drawerOverlay">
+  <aside class="drawer" data-side="left" id="mainMenu">
+    <div class="drawer-header">
+      <span>DJC</span>
+      <button class="drawer-close">✕</button>
+    </div>
+    <nav class="drawer-menu">
+      <a href="https://www.djc.pe/">Inicio</a>
+      <a href="https://g1.djc.pe/">G1</a>
+      <a href="https://tutorial-hub.djc.pe/">Tutorial-hub</a>
+      <hr>
+    </nav>
+  </aside>
+
+  <aside class="drawer" data-side="right" id="userMenu">
+    <div class="drawer-header">
+      <span>Mi cuenta</span>
+      <button class="drawer-close">✕</button>
+    </div>
+    <nav class="drawer-menu">
+      <a href="#">Iniciar sesión</a>
+      <a href="#">Registrarse</a>
+      <hr>
+    </nav>
+  </aside>
+</div>
+  </header>
+
+  <main class="content">
+
+<section class="profile">
+
+  <div class="profile__head">
+    <div class="profile__avatar">D</div>
+    <div class="profile__info">
+      <h1>Danny</h1>
+      <p class="profile__username">@danny</p>
+      <p class="profile__meta">Miembro desde 2026</p>
+    </div>
+  </div>
+
+  <section class="presentacion">
+
+    <h2>Presentación</h2>
+
+    <p class="presentacion__texto">Bienvenido, acompáñame en este viaje de descubrimiento! ⛰️🚗🗺️</p>
+
+  </section>
+
+</section>
+
+  </main>
+
+</body>
+</html>
