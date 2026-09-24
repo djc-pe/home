@@ -21,12 +21,12 @@
     --font-heading: 'Poppins', sans-serif;
 
     /* Superficies */
-    --color-bg: #F5F7F2;
-    --color-surface: #FFFFFF;
+    --color-bg: #000000;
+    --color-surface: #141414;
 
     /* Texto */
-    --color-text: #1A1A1A;
-    --color-text-muted: #5A5A5A;
+    --color-text: #FFFFFF;
+    --color-text-muted: #9CA3AF;
     --color-text-inverse: #FFFFFF;
 
     /* Marca */
@@ -39,6 +39,23 @@
 
     /* UI */
     --color-border: #e5f774;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  main.content {
+    background: var(--color-surface);
+  }
+
+  .navbar__link:hover {
+    border-color: var(--color-accent);
+  }
+
+  .navbar {
+    border-bottom: 1px solid rgba(229, 247, 116, 0.25);
   }
 
   /* ============ PERFIL ============ */
@@ -85,7 +102,7 @@
 
   .profile__username {
     margin: 2px 0 4px;
-    color: var(--color-text-muted);
+    color: var(--color-accent);
     font-size: 15px;
   }
 
@@ -108,7 +125,7 @@
     margin: 0;
     font-family: var(--font-heading);
     font-size: 18px;
-    color: var(--color-text);
+    color: var(--color-accent);
   }
 
   .presentacion__texto {
