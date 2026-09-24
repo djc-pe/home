@@ -39,44 +39,17 @@
   }
 
   /* ============ PERFIL ============ */
-  main.content {
-    background: transparent;
-    padding: 0;
-    overflow: hidden;
-  }
-
   .profile {
     display: flex;
     flex-direction: column;
-    background: var(--color-surface);
-  }
-
-  .profile__cover {
-    height: 150px;
-    background:
-      linear-gradient(120deg, #0a0a0a 0%, #1b1b1b 45%, #3a3a3a 100%);
-    position: relative;
-    flex-shrink: 0;
-  }
-
-  .profile__cover::before {
-    content: "DJC";
-    position: absolute;
-    right: 18px;
-    bottom: 12px;
-    font-family: var(--font-heading);
-    font-size: 28px;
-    letter-spacing: 4px;
-    color: var(--color-accent);
-    opacity: 0.85;
+    padding-top: 20px;
   }
 
   .profile__head {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 18px;
     padding: 0 20px 16px;
-    margin-top: -40px;
   }
 
   .profile__avatar {
@@ -121,7 +94,7 @@
 
   /* ============ PRESENTACIÓN ============ */
   .presentacion {
-    margin: 24px 20px 8px;
+    margin: 24px 0 8px;
     border: 1px solid var(--color-border);
     border-radius: 10px;
     background: var(--color-surface);
@@ -222,11 +195,11 @@
   }
 
   @media (max-width: 600px) {
-    .profile__cover { height: 110px; }
+    .profile { padding-top: 12px; }
     .profile__avatar { width: 72px; height: 72px; font-size: 28px; border-width: 3px; }
-    .profile__head { margin-top: -32px; gap: 12px; padding: 0 14px 14px; }
+    .profile__head { gap: 12px; padding: 0 14px 14px; }
     .profile__info h1 { font-size: 20px; }
-    .presentacion { margin: 18px 14px 8px; }
+    .presentacion { margin: 18px 0 8px; }
   }
   </style>
 
@@ -298,8 +271,6 @@
   <main class="content">
 
 <section class="profile">
-
-  <div class="profile__cover"></div>
 
   <div class="profile__head">
     <div class="profile__avatar">D</div>
