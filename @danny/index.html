@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@danny · DJC</title>
+
+  <link rel="canonical" href="https://www.djc.pe/@danny/">
+  <link rel="icon" type="image/png" href="/static/www/img/icon.png">
+  <link rel="stylesheet" href="/static/www/css/style.css">
+  <link rel="stylesheet" href="/static/www/css/bottom-nav.css">
+  <link rel="stylesheet" href="/static/www/css/content.css">
+
+  <style>
+  :root {
+    /* Tipografía */
+    --font-base: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
+    /* Superficies */
+    --color-bg: #F5F7F2;
+    --color-surface: #FFFFFF;
+
+    /* Texto */
+    --color-text: #1A1A1A;
+    --color-text-muted: #5A5A5A;
+    --color-text-inverse: #FFFFFF;
+
+    /* Marca */
+    --color-primary: #000000;
+    --color-accent: #e5f774;
+
+    /* Variantes */
+    --color-accent-hover: #e5f774;
+    --color-accent-dark: #e5f774;
+
+    /* UI */
+    --color-border: #e5f774;
+  }
+
+  /* ============ PERFIL ============ */
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile__cover {
+    height: 140px;
+    border-radius: 10px 10px 0 0;
+    background:
+      linear-gradient(120deg, #0a0a0a 0%, #1b1b1b 45%, #3a3a3a 100%);
+    position: relative;
+  }
+
+  .profile__cover::before {
+    content: "DJC";
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    font-family: var(--font-heading);
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+    opacity: 0.85;
+  }
+
+  .profile__head {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    padding: 0 20px;
+    margin-top: -40px;
+  }
+
+  .profile__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid var(--color-surface);
+    background: var(--color-accent);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    flex-shrink: 0;
+  }
+
+  .profile__info {
+    padding-bottom: 8px;
+    min-width: 0;
+  }
+
+  .profile__info h1 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--color-text);
+  }
+
+  .profile__username {
+    margin: 2px 0 4px;
+    color: var(--color-text-muted);
+    font-size: 15px;
+  }
+
+  .profile__meta {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 13px;
+  }
+
+  /* ============ PRESENTACIÓN ============ */
+  .presentacion {
+    margin: 24px 0 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    background: var(--color-surface);
+    padding: 18px 20px;
+  }
+
+  .presentacion__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .presentacion__header h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--color-text);
+  }
+
+  .presentacion__texto {
+    margin: 14px 0 0;
+    line-height: 1.6;
+    color: var(--color-text);
+    white-space: pre-line;
+  }
+
+  .presentacion__form {
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .presentacion__form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 110px;
+    padding: 12px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+  }
+
+  .presentacion__form textarea:focus {
+    border-color: var(--color-primary);
+  }
+
+  .presentacion__acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .btn {
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn--primario {
+    background: var(--color-primary);
+    color: var(--color-text-inverse);
+  }
+
+  .btn--secundario {
+    background: var(--color-surface);
+    color: var(--color-primary);
+  }
+
+  /* Botón editar dentro de <details> */
+  .presentacion__edit summary {
+    cursor: pointer;
+    list-style: none;
+    font-size: 14px;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 8px 18px;
+    user-select: none;
+  }
+
+  .presentacion__edit summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .presentacion__edit[open] summary {
+    background: var(--color-bg);
+  }
+
+  @media (max-width: 600px) {
+    .profile__cover { height: 110px; border-radius: 8px 8px 0 0; }
+    .profile__avatar { width: 72px; height: 72px; font-size: 28px; border-width: 3px; }
+    .profile__head { margin-top: -32px; gap: 12px; padding: 0 14px; }
+    .profile__info h1 { font-size: 20px; }
+  }
+  </style>
+
+</head>
+<body>
+  <header>
+    
+<link rel="stylesheet" href="/static/www/components/top_nav_v2/style.css">
+<script src="/static/www/components/top_nav_v2/script.js"></script>
+<script src="/static/www/components/top_nav_v2/search.js" defer></script>
+<nav class="navbar">
+  <div class="navbar__a">
+    <a href="#" class="navbar__link">
+      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
+      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
+    </a>
+
+    <a href="https://www.djc.pe/" class="navbar__link">
+      <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
+      <img src="/static/www/img/logo-mobile.png" alt="Home" class="navbar__icon navbar__icon--mobile">
+    </a>
+  </div>
+  <div class="navbar__b">
+    <div class="navbar__b--search">
+      <input type="text" placeholder="">
+      <button>
+          <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
+      </button>
+    </div>
+  </div>
+  <div class="navbar__c">
+    <a href="#" class="navbar__link">
+      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
+      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
+    </a>
+  </div>
+</nav>
+    
+<link rel="stylesheet" href="/static/www/components/top_nav_v2_menu/style.css">
+<script src="/static/www/components/top_nav_v2_menu/script.js"></script>
+<div class="drawer-overlay" id="drawerOverlay">
+  <aside class="drawer" data-side="left" id="mainMenu">
+    <div class="drawer-header">
+      <span>DJC</span>
+      <button class="drawer-close">✕</button>
+    </div>
+    <nav class="drawer-menu">
+      <a href="https://www.djc.pe/">Inicio</a>
+      <a href="https://g1.djc.pe/">G1</a>
+      <a href="https://tutorial-hub.djc.pe/">Tutorial-hub</a>
+      <hr>
+    </nav>
+  </aside>
+
+  <aside class="drawer" data-side="right" id="userMenu">
+    <div class="drawer-header">
+      <span>Mi cuenta</span>
+      <button class="drawer-close">✕</button>
+    </div>
+    <nav class="drawer-menu">
+      <a href="#">Iniciar sesión</a>
+      <a href="#">Registrarse</a>
+      <hr>
+    </nav>
+  </aside>
+</div>
+  </header>
+
+  <main class="content">
+
+<section class="profile">
+
+  <div class="profile__cover"></div>
+
+  <div class="profile__head">
+    <div class="profile__avatar">D</div>
+    <div class="profile__info">
+      <h1>Danny</h1>
+      <p class="profile__username">@danny</p>
+      <p class="profile__meta">Miembro desde 2026</p>
+    </div>
+  </div>
+
+  <section class="presentacion">
+
+    <div class="presentacion__header">
+      <h2>Presentación</h2>
+      <details class="presentacion__edit">
+        <summary>Editar</summary>
+        <form class="presentacion__form">
+          <textarea name="bio" placeholder="Cuéntale a la comunidad quién eres…">
+Hola, soy Danny, fundador de DJC.
+Bienvenido a mi rincón del ecosistema.</textarea>
+          <div class="presentacion__acciones">
+            <button type="button" class="btn btn--secundario">Cancelar</button>
+            <button type="submit" class="btn btn--primario">Guardar</button>
+          </div>
+        </form>
+      </details>
+    </div>
+
+    <p class="presentacion__texto">Hola, soy Danny, fundador de DJC. Bienvenido a mi rincón del ecosistema.</p>
+
+  </section>
+
+</section>
+
+  </main>
+
+</body>
+</html>
