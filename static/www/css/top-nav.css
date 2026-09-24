@@ -1,0 +1,37 @@
+.top-nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 60px;
+
+  background: var(--background_color, #000);
+  color: var(--text_color, #fff);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 16px;
+
+  z-index: 9999;
+
+  box-sizing: border-box;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.top-nav .nav-user {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.top-nav .nav-user a {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.1);
+}
