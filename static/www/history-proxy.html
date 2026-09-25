@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DJC History</title>
+  <meta name="robots" content="noindex">
+  <style>html, body { display: none; }</style>
+</head>
+<body>
+<script>
+(function () {
+  'use strict';
+
+  var DB_NAME = 'djc-history';
+  var STORE = 'visits';
+  var IDX_TIME = 'byTime';
+  var MAX_VISITS = 1000;
+  var DEDUPE_WINDOW = 30000;
+
+  function isAllowed(origin) {
+    if (origin === 'https://www.djc.pe') return true;
+    if (origin.slice(-'.djc.pe'.length) === '.djc.pe') return true;
+    var extra = (window.DJCHistoryConfig && window.DJCHistoryConfig.origins) || [];
+    return extra.indexOf(origin) !== -1;
+  }
+
+  function openDB() {
+    return new Promise(function (resolve, reject) {
+      var stored = indexedDB.open(DB_NAME, 1);
+      stored.onupgradeneeded = function (e) {
+        var db = e.target.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          var store = db.createObjectStore(STORE, { autoIncrement: true });
+          store.createIndex(IDX_TIME, 'ts');
+        }
+      };
+      stored.onsuccess = function () { resolve(stored.result); };
+      stored.onerror = function () { reject(stored.error); };
+    });
+  }
+
+  function lastVisit(db, visit) {
+    return new Promise(function (resolve) {
+      var tx = db.transaction(STORE, 'readonly');
+      var index = tx.objectStore(STORE).index(IDX_TIME);
+      var req = index.openCursor(null, 'prev');
+      req.onsuccess = function () {
+        var cursor = req.result;
+        if (!cursor) { resolve(false); return; }
+        var rec = cursor.value;
+        var dup = rec.host === visit.host && rec.page === visit.page &&
+          visit.ts - rec.ts < DEDUPE_WINDOW;
+        resolve(dup);
+      };
+      req.onerror = function () { resolve(false); };
+    });
+  }
+
+  function addVisit(db, visit) {
+    return lastVisit(db, visit).then(function (dup) {
+      if (dup) return false;
+      return new Promise(function (resolve, reject) {
+        var tx = db.transaction(STORE, 'readwrite');
+        tx.objectStore(STORE).add(visit);
+        tx.oncomplete = function () { resolve(true); };
+        tx.onerror = function () { reject(tx.error); };
+      });
+    });
+  }
+
+  function trim(db) {
+    return new Promise(function (resolve, reject) {
+      var tx = db.transaction(STORE, 'readwrite');
+      var store = tx.objectStore(STORE);
+      var countReq = store.count();
+      countReq.onsuccess = function () {
+        var remove = countReq.result - MAX_VISITS;
+        if (remove <= 0) { resolve(); return; }
+        var cursorReq = store.openCursor(null, 'next');
+        var removed = 0;
+        cursorReq.onsuccess = function () {
+          var cursor = cursorReq.result;
+          if (!cursor || removed >= remove) { resolve(); return; }
+          cursor.delete();
+          removed += 1;
+          cursor['continue']();
+        };
+        cursorReq.onerror = function () { reject(cursorReq.error); };
+      };
+      countReq.onerror = function () { reject(countReq.error); };
+    });
+  }
+
+  function clear(db) {
+    return new Promise(function (resolve, reject) {
+      var tx = db.transaction(STORE, 'readwrite');
+      tx.objectStore(STORE).clear();
+      tx.oncomplete = resolve;
+      tx.onerror = function () { reject(tx.error); };
+    });
+  }
+
+  function getAll(db) {
+    return new Promise(function (resolve, reject) {
+      var tx = db.transaction(STORE, 'readonly');
+      var index = tx.objectStore(STORE).index(IDX_TIME);
+      var req = index.openCursor(null, 'prev');
+      var list = [];
+      req.onsuccess = function () {
+        var cursor = req.result;
+        if (cursor) {
+          list.push(cursor.value);
+          cursor['continue']();
+        } else {
+          resolve(list);
+        }
+      };
+      req.onerror = function () { reject(req.error); };
+    });
+  }
+
+  openDB().then(function (db) {
+    window.addEventListener('message', function (event) {
+      if (!isAllowed(event.origin)) return;
+      var msg = event.data || {};
+      var source = event.source;
+      var ack = function (extra) {
+        if (!source) return;
+        var reply = { type: 'DJC_HISTORY_ACK', ok: true };
+        for (var k in extra) reply[k] = extra[k];
+        source.postMessage(reply, event.origin);
+      };
+
+      if (msg.type === 'DJC_HISTORY' && msg.payload) {
+        addVisit(db, msg.payload).then(function (added) {
+          trim(db).then(function () { ack({ added: added }); });
+        });
+      } else if (msg.type === 'DJC_HISTORY_GET') {
+        getAll(db).then(function (list) { ack({ visits: list }); });
+      } else if (msg.type === 'DJC_HISTORY_CLEAR') {
+        clear(db).then(function () { ack({ cleared: true }); });
+      }
+    });
+  }).catch(function (err) {
+    if (window.console && console.error) console.error('DJC History:', err);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* ============ HISTORIAL ============ */
+.history {
+  margin: 24px 0 8px;
+}
+
+.history__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.history__head h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--color-accent);
+}
+
+.history__clear {
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.history__clear:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+.history__empty {
+  margin: 8px 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.history__day h3 {
+  margin: 18px 0 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  text-transform: capitalize;
+  color: var(--color-text-muted);
+}
+
+.history__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.history__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background 0.2s;
+}
+
+.history__link:hover {
+  background: var(--color-surface);
+}
+
+.history__time {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  min-width: 44px;
+}
+
+.history__chip {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 999px;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history__body {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.history__title {
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history__path {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .history { margin: 18px 0 8px; }
+  .history__link { gap: 8px; padding: 9px 8px; }
+  .history__chip { max-width: 110px; }
+}
