@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
+  <!-- 87.34.2.92 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJC</title>
-  
-  <link rel="canonical" href="https://www.djc.pe/">
-  <link rel="icon" type="image/png" href="/static/www/img/icon.png">
-  <link rel="stylesheet" href="/static/www/css/style.css">
-  <!-- <link rel="stylesheet" href="/static/www/css/top-nav.css"> -->
-  <link rel="stylesheet" href="/static/www/css/bottom-nav.css">
-  <link rel="stylesheet" href="/static/www/css/content.css">
-  <link rel="stylesheet" href="/static/www/css/pygments.css">
-  <link rel="stylesheet" href="/static/www/css/codehilite.css">
-  <link rel="stylesheet" href="/static/www/css/history.css">
+  <link rel="icon" type="image/png" href="https://story.djc.pe/res/base/icon.png">
+
+  <link rel="stylesheet" href="https://story.djc.pe/res/base/variable.css">
+  <link rel="stylesheet" href="https://story.djc.pe/res/base/style.css">
+  <link rel="stylesheet" href="https://story.djc.pe/res/base/index.css">
+  <script src="https://story.djc.pe/res/base/index.js" defer></script>
+  <script src="https://story.djc.pe/res/nav/script.js" defer></script>
+
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0JX351KT2"></script>
@@ -25,122 +23,94 @@
   gtag('config', 'G-S0JX351KT2');
 </script>
 
-  <style>
-  :root {
-        /* Tipografía */
-    --font-base: 'Inter', sans-serif;
-    --font-heading: 'Poppins', sans-serif;
+  <title>DJC</title>
+  <meta name="description" content="DJC">
 
-    /* Superficies */
-    --color-bg: #000000;
-    --color-surface: #141414;
-
-    /* Texto */
-    --color-text: #FFFFFF;
-    --color-text-muted: #9CA3AF;
-    --color-text-inverse: #FFFFFF;
-
-    /* Marca */
-    --color-primary: #000000;
-    --color-accent: #e5f774;
-
-    /* Variantes */
-    --color-accent-hover: #e5f774;
-    --color-accent-dark: #e5f774;
-
-    /* UI */
-    --color-border: #e5f774;
-
-  }
-  </style>
-
-  
-
-  
-
-  
+  <link rel="canonical" href="https://www.djc.pe/">
 </head>
 <body>
-  <header>
-    
-<link rel="stylesheet" href="/static/www/components/top_nav_v2/style.css">
-<script src="/static/www/components/top_nav_v2/script.js"></script>
-<script src="/static/www/components/top_nav_v2/search.js" defer></script>
-<nav class="navbar">
-  <div class="navbar__a">
-    <a href="#" class="navbar__link">
-      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/menu-white.svg" alt="Menu" class="navbar__icon navbar__icon--mobile">
+<main class="content">
+
+<div class="djc-tutorial-tabs">
+  <div class="djc-tabs-nav" role="tablist" aria-label="Language selection">
+    <a class="djc-tab" id="tab-1" href="#panel-1"
+      role="tab" aria-selected="true" aria-controls="panel-1">
+      English
     </a>
 
-    <a href="https://www.djc.pe/" class="navbar__link">
-      <img src="/static/www/img/logo.png" alt="Home" class="navbar__logo navbar__icon--desktop">
-      <img src="/static/www/img/logo-mobile.png" alt="Home" class="navbar__icon navbar__icon--mobile">
+    <a class="djc-tab" id="tab-2" href="#panel-2"
+      role="tab" aria-selected="false" aria-controls="panel-2">
+      Español
+    </a>
+
+    <a class="djc-tab" id="tab-3" href="#panel-3"
+      role="tab" aria-selected="false" aria-controls="panel-3">
+      简体中文
     </a>
   </div>
-  <div class="navbar__b">
-    <div class="navbar__b--search">
-      <input type="text" placeholder="">
-      <button>
-          <img src="/static/www/img/search.svg" alt="Search" class="navbar__icon2">
-      </button>
-    </div>
-  </div>
-  <div class="navbar__c">
-    <!-- <a href="#" class="navbar__link">
-      <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/car-white.svg" alt="Login" class="navbar__icon navbar__icon--mobile">
-    </a> -->
 
-    <a href="#" class="navbar__link">
-      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--desktop">
-      <img src="/static/www/img/user-white.svg" alt="User" class="navbar__icon navbar__icon--mobile">
-    </a>
-  </div>
-</nav>
-    
-<link rel="stylesheet" href="/static/www/components/top_nav_v2_menu/style.css">
-<script src="/static/www/components/top_nav_v2_menu/script.js"></script>
-<div class="drawer-overlay" id="drawerOverlay">
-  <aside class="drawer" data-side="left" id="mainMenu">
-    <div class="drawer-header">
-      <!-- <img src="/img/logo-1.png" alt="Davenco"> -->
-      <span>DJC</span>
-      <button class="drawer-close">✕</button>
-    </div>
-    <nav class="drawer-menu">
-      <a href="https://www.djc.pe/">Inicio</a>
-      <!-- <a href="https://g1.djc.pe/">G1</a> -->
-      <a href="https://page.djc.pe/">Page</a>
-      <a href="https://story.djc.pe/">Story</a>
-      <a href="https://tutorial.djc.pe/">Tutorial</a>
-      <hr>
-    </nav>
-  </aside>
-
-  <aside class="drawer" data-side="right" id="userMenu">
-    <div class="drawer-header">
-      <span>Mi cuenta</span>
-      <button class="drawer-close">✕</button>
-    </div>
-    <nav class="drawer-menu">
-      <a href="#">Iniciar sesión</a>
-      <a href="#">Registrarse</a>
-      <hr>
-    </nav>
-  </aside>
-</div>
-  </header>
-
-  <main class="content">
+  <!-- English -->
+<div class="djc-tab-panel is-active" id="panel-1"
+role="tabpanel" aria-labelledby="tab-1" lang="en">
 
 <h1 style="font-size:26px; margin-bottom:4px; text-align:center;">DJC</h1>
 <p style="color:var(--color-text-muted); font-size:15px; margin:0 auto; max-width:70ch; text-align:center;">
-DJC es una plataforma Digital que se adapta a ti, para Juntos Crear.
+DJC is a digital platform where we create together.
 </p>
 
-<h2 style="font-size:20px;">Producto destacado</h2>
-<a href="https://page.djc.pe/"
+<br/><br/>
+
+<a href="https://page.djc.pe/en/"
+   style="display:block; text-decoration:none; padding:20px; border:1px solid var(--color-border); border-left:3px solid var(--color-accent); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
+  <p style="margin:0 0 6px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent);">DJC Page</p>
+  <h3 style="margin:0 0 8px; font-size:20px; color:var(--color-accent);">Custom Websites</h3>
+  <p style="margin:0; color:var(--color-text-muted); font-size:14px; max-width:70ch;">We build custom websites for your project, brand, or business, with unique designs tailored to your needs and pace.</p>
+  <p style="margin:12px 0 0; font-size:14px; color:var(--color-accent);">Tell us your idea →</p>
+</a>
+
+<h2>DJC Tutorial</h2>
+<div class="djc-tutorial-others">
+
+  <a href="https://tutorial.djc.pe/es/9c/ad/d3/86/64/13/42/e3/a4/38/aa/b9/eb/32/19/64/">
+  <h2>What Is a Landing Page?</h2>
+  <p>Learn what a landing page is used for, its main components, and how it differs from a conventional website.</p>
+  </a>
+
+  <a href="https://tutorial.djc.pe/es/ab/ec/8a/ab/9e/60/4b/66/a6/ef/78/a8/1f/a3/83/d4/">
+  <h2>What Is Software Development?</h2>
+  <p>Learn about its definition, life cycle, types, methodologies, and team roles.</p>
+  </a>
+
+  <a href="https://tutorial.djc.pe/es/b8/53/4d/ab/8a/be/43/70/99/d8/0b/c4/7d/98/78/8e/">
+  <h2>What Is Kaggle?</h2>
+  <p>Google's platform for learning machine learning, featuring competitions, datasets, free notebooks, and a community.</p>
+  </a>
+
+</div>
+
+<h2>DJC G1</h2>
+<div class="djc-tutorial-others">
+
+  <a href="https://g1.djc.pe/en/">
+  <h2>What Is DJC G1?</h2>
+  <p>A game currently in active development. For now, it is a multiplayer open-world game.</p>
+  </a>
+
+</div>
+
+</div>
+
+  <!-- Español -->
+<div class="djc-tab-panel" id="panel-2"
+role="tabpanel" aria-labelledby="tab-2" lang="es">
+
+<h1 style="font-size:26px; margin-bottom:4px; text-align:center;">DJC</h1>
+<p style="color:var(--color-text-muted); font-size:15px; margin:0 auto; max-width:70ch; text-align:center;">
+DJC es una plataforma Digital donde Juntos Creamos.
+</p>
+
+<br/><br/>
+<a href="https://page.djc.pe/es/"
    style="display:block; text-decoration:none; padding:20px; border:1px solid var(--color-border); border-left:3px solid var(--color-accent); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
   <p style="margin:0 0 6px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent);">DJC Page</p>
   <h3 style="margin:0 0 8px; font-size:20px; color:var(--color-accent);">Páginas web a medida</h3>
@@ -148,30 +118,92 @@ DJC es una plataforma Digital que se adapta a ti, para Juntos Crear.
   <p style="margin:12px 0 0; font-size:14px; color:var(--color-accent);">Cuéntanos tu idea →</p>
 </a>
 
-<h2 style="font-size:20px;">Tutoriales</h2>
-<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:16px;">
+<h2>DJC Tutorial</h2>
+<div class="djc-tutorial-others">
 
-  <a href="https://tutorial.djc.pe/es/9c/ad/d3/86/64/13/42/e3/a4/38/aa/b9/eb/32/19/64/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">¿Qué es una Landing Page?</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Para qué sirve una landing page, qué partes tiene y cómo se diferencia de una web normal.</p>
+  <a href="https://tutorial.djc.pe/es/9c/ad/d3/86/64/13/42/e3/a4/38/aa/b9/eb/32/19/64/">
+  <h2>¿Qué es una landing page?</h2>
+  <p>Para qué sirve una landing page, cuáles son sus partes y cómo se diferencia de una web convencional.</p>
   </a>
 
-  <a href="https://tutorial.djc.pe/es/ab/ec/8a/ab/9e/60/4b/66/a6/ef/78/a8/1f/a3/83/d4/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">¿Qué es Software Development?</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">Conoce qué es el desarrollo de software: definición, ciclo de vida, tipos, metodologías y roles del equipo.</p>
+  <a href="https://tutorial.djc.pe/es/ab/ec/8a/ab/9e/60/4b/66/a6/ef/78/a8/1f/a3/83/d4/">
+  <h2>¿Qué es el desarrollo de software?</h2>
+  <p>Conoce su definición, ciclo de vida, tipos, metodologías y roles del equipo.</p>
   </a>
 
-  <a href="https://tutorial.djc.pe/es/b8/53/4d/ab/8a/be/43/70/99/d8/0b/c4/7d/98/78/8e/"
-     style="display:block; text-decoration:none; padding:16px; border:1px solid var(--color-border); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
-    <h2 style="margin:0 0 8px; font-size:18px; color:var(--color-accent);">¿Qué es Kaggle?</h2>
-    <p style="margin:0; color:var(--color-text-muted); font-size:14px;">La plataforma de Google para aprender machine learning: competencias, datasets, notebooks gratis y comunidad.</p>
+  <a href="https://tutorial.djc.pe/es/b8/53/4d/ab/8a/be/43/70/99/d8/0b/c4/7d/98/78/8e/">
+  <h2>¿Qué es Kaggle?</h2>
+  <p>La plataforma de Google para aprender machine learning: competencias, conjuntos de datos, notebooks gratuitos y comunidad.</p>
   </a>
 
 </div>
 
-  </main>
-  
+<h2>DJC G1</h2>
+<div class="djc-tutorial-others">
+
+  <a href="https://g1.djc.pe/es/">
+  <h2>¿Qué es este juego DJC G1?</h2>
+  <p>Un juego que está en pleno desarrollo, por ahora es un mundo abierto multijugador.</p>
+  </a>
+
+</div>
+
+
+</div>
+
+<!-- 简体中文 -->
+<div class="djc-tab-panel" id="panel-3"
+role="tabpanel" aria-labelledby="tab-3" lang="zh-CN">
+
+<h1 style="font-size:26px; margin-bottom:4px; text-align:center;">DJC</h1>
+<p style="color:var(--color-text-muted); font-size:15px; margin:0 auto; max-width:70ch; text-align:center;">
+DJC 是一个让我们携手创造的数字平台。
+</p>
+
+<br/><br/>
+
+<a href="https://page.djc.pe/zh-cn/"
+   style="display:block; text-decoration:none; padding:20px; border:1px solid var(--color-border); border-left:3px solid var(--color-accent); border-radius:10px; background:var(--color-surface); color:var(--color-text);">
+  <p style="margin:0 0 6px; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--color-accent);">DJC Page</p>
+  <h3 style="margin:0 0 8px; font-size:20px; color:var(--color-accent);">定制网站</h3>
+  <p style="margin:0; color:var(--color-text-muted); font-size:14px; max-width:70ch;">我们为您的项目、品牌或企业打造定制网站，提供独特的设计，并根据您的需求和节奏进行开发。</p>
+  <p style="margin:12px 0 0; font-size:14px; color:var(--color-accent);">告诉我们您的想法 →</p>
+</a>
+
+<h2>DJC 教程</h2>
+<div class="djc-tutorial-others">
+
+  <a href="https://tutorial.djc.pe/es/9c/ad/d3/86/64/13/42/e3/a4/38/aa/b9/eb/32/19/64/">
+  <h2>什么是着陆页（Landing Page）？</h2>
+  <p>了解着陆页的用途、主要组成部分，以及它与传统网站的区别。</p>
+  </a>
+
+  <a href="https://tutorial.djc.pe/es/ab/ec/8a/ab/9e/60/4b/66/a6/ef/78/a8/1f/a3/83/d4/">
+  <h2>什么是软件开发？</h2>
+  <p>了解软件开发的定义、生命周期、类型、开发方法以及团队角色。</p>
+  </a>
+
+  <a href="https://tutorial.djc.pe/es/b8/53/4d/ab/8a/be/43/70/99/d8/0b/c4/7d/98/78/8e/">
+  <h2>什么是 Kaggle？</h2>
+  <p>Google 推出的机器学习学习平台，提供竞赛、数据集、免费 Notebook 和交流社区。</p>
+  </a>
+
+</div>
+
+<h2>DJC G1</h2>
+<div class="djc-tutorial-others">
+
+  <a href="https://g1.djc.pe/zh-cn/">
+  <h2>什么是 DJC G1？</h2>
+  <p>这是一款正在积极开发中的游戏，目前是一款支持多人联机的开放世界游戏。</p>
+  </a>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
 </body>
 </html>
