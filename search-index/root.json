@@ -1,0 +1,34 @@
+{
+  "format": 2,
+  "site": "home",
+  "host": "https://www.djc.pe",
+  "updated": "2026-11-02",
+  "model": {
+    "id": "all-MiniLM-L6-v2",
+    "file": "onnx/model_quantized.onnx",
+    "sha256": "afdb6f1a0e45b715d0bb9b11772f032c399babd23bfc31fed1c170afc848bdb1",
+    "dims": 384,
+    "max_tokens": 256,
+    "pooling": "mean",
+    "normalize": true
+  },
+  "docs": 7,
+  "chunks": 13,
+  "vectors": {
+    "type": "int8",
+    "scale": "per-vector"
+  },
+  "nodes": [
+    {
+      "file": "nodes/0.json",
+      "version": "7ce31d43cbe2",
+      "docs": 7,
+      "chunks": 13,
+      "centroid": {
+        "scale": 0.001184935,
+        "data": "pNjKj9PhKP0uKw4ICdjuB9c+FBX17gwd9R/+UNygRGQyCDdL4KPyBK/q2g348qrvE6ObuQjS+tsKGwz+9xrhIBGY/hUTB8fiBCsBIfP3EJ8KC8Pe6fsERkIQIDH95t8HLNfvSjM8Le/Z7CElR+WfBo+8seVIDha15OffzgPO3wAbCRExAAvrBdoL+BDkTxwBy8IA7QcEDTdZRtYKP0UK+M7jKA02+Pjz1uAG5Oz1ICo48tm48NTy2NQA2ywqEeTv8bgDHHwBye8dIMD04+IKD6P97PASITcEqxm4KjgJJgDvJs8mAMsqFwDGwq4f5+oRpr/BWPpC9QQE1xgquC9Ev+A83/YR6QhCRSXVAcf43Pv9yhYABtUWE/gH0Sb4J90INv73XfqsNwabBcjzgUImIBL6wewjHe4d6+kBMipVsgD+zwfwRwzqAf9FHhGtJwoc7lPfxxAOwc8OAdBA0wIx+gXFLR8K0P8QHfrq9PTu0N7mFPnm+hA9Ae4t9gQcXeAK"
+      }
+    }
+  ],
+  "version": "4a6f34e79786"
+}
